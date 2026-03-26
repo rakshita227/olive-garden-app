@@ -43,9 +43,14 @@
     </div>
 
     <script src="script.js"></script>
+    <script type="module" src="db.js"></script>
     <script>
-        function validateForm(e) {
+        async function validateForm(e) {
             e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            if (window.submitContact) await window.submitContact(name, email, message);
             alert('Thank you! Your message has been sent successfully.');
             document.getElementById('contactForm').reset();
         }

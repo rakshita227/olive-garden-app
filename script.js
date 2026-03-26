@@ -11,7 +11,7 @@ const menuItems = [
 ];
 
 // --- Cart Initialization ---
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+var cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // --- Global Functions ---
 function updateCartCount() {
@@ -55,6 +55,7 @@ function addToCart(id) {
     }
     
     localStorage.setItem('cart', JSON.stringify(cart));
+    if (window.syncCartToFirestore) window.syncCartToFirestore();
     updateCartCount();
     showToast(`${item.name} added to cart!`);
 }
@@ -93,6 +94,7 @@ function updateQty(id, change) {
     item.quantity += change;
     if (item.quantity <= 0) return removeItem(id);
     localStorage.setItem('cart', JSON.stringify(cart));
+    if (window.syncCartToFirestore) window.syncCartToFirestore();
     renderCart();
     updateCartCount();
 }
@@ -100,6 +102,7 @@ function updateQty(id, change) {
 function removeItem(id) {
     cart = cart.filter(p => p.id !== id);
     localStorage.setItem('cart', JSON.stringify(cart));
+    if (window.syncCartToFirestore) window.syncCartToFirestore();
     renderCart();
     updateCartCount();
 }

@@ -1,5 +1,6 @@
 // Get these from: Firebase Console → Project Settings → Your apps → Firebase SDK snippet
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDYUdKxv1qHgbo7yFuBumTVZf4wM3X8VI",
@@ -11,4 +12,5 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-export { app };
+const db = getFirestore(app);
+export { app, db };
