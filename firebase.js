@@ -2,13 +2,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDLYx3CaqHMKgFghnhCsregwSyI1rW5uy0",
-  authDomain: "rakshita-s-project.firebaseapp.com",
-  projectId: "rakshita-s-project",
-  storageBucket: "rakshita-s-project.firebasestorage.app",
-  messagingSenderId: "838327727856",
-  appId: "1:838327727856:web:75402f466add63b016f435",
-  measurementId: "G-QL1V69WPLL"
+  apiKey: "AIzaSyCDYUdKxv1qHgbo7yFuBumTVZf4wM3X8VI",
+  authDomain: "olive-garden-7ee59.firebaseapp.com",
+  projectId: "olive-garden-7ee59",
+  storageBucket: "olive-garden-7ee59.firebasestorage.app",
+  messagingSenderId: "1052541464541",
+  appId: "1:1052541464541:web:bc6faf9144f6b276019034"
 };
 
 const app = initializeApp(firebaseConfig);
